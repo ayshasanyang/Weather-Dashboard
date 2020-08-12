@@ -1,87 +1,56 @@
+  
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./Assets/css/style.css">
-    <title>Weather Dashboard</title>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./Assets/css/style.css" />
+		<title>Weather Dashboard</title>
+	</head>
 
 <body>
-    <!-- Row 1 - Header -->
 
-    <header>
-        <h1>Weather Dashboard</h1>
-    </header>
-
-    <section class="container" >
-        <div class="clearfix">
-            <div class="col-4 float-left">
-                <div class="row shadow-lg p-3 mb-5 bg-white rounded">
-
-                    <h2 class="lead">Search for a City:</h2>
-                    <div class="input-group mb-3">
-                        <input id="searchCity" class="form-control mr-sm-2" type="search" placeholder="City name"
-                            aria-label="Search">
-                        <button id="searchButton" class="btn btn-primary my-2 my-sm-0" type="button" id="searchCity">Search</button>
+    <div class="container-fluid">
+        <nav class="navbar bg-dark">
+            <p class="header-style mx-auto">Weather Dashboard</p>
+        </nav>
+        <div class="row">
+            <div class="col-4 bg-light">
+                <div class="mt-2">Search for a City:</div>
+                <div class="input-group mb-3">
+                    <input type="text" id="city" class="form-control">
+                    <div class="input-group-append">
+                        <button class="bg-info" type="button" id="searchCity"><i class="fas fa-search"></i></button>
                     </div>
-                    <div id="searchhistory" class="mt-1"> </div>
-                    <div class="list-group"></div>
                 </div>
+                <!-- left column / list -->
+                <div class="list-group"></div>
             </div>
-
+            <div class="col-8">
+                <div class="row p-2">
+                    <div class="card">
+                        <!-- main card -->
+                        <div class="card-body"></div>
+                    </div>
                 </div>
-                <div class="col-sm-1">
-                </div>
+                    <div class="row">
+                        <h4>5-Day Forecast:</h4>
+                    </div>
+                <!-- five day -->
+                <div id="weeklyForecast" class="row"></div>
             </div>
         </div>
-        <!-- Row 2, Column 2 - right side -->
-        <div >
-            <!-- Row 2, Column 2, Row a - Current Weather -->
-            <div class="col-8 float-right">
-                <div class="card bg-light text-dark p-2 rem shadow-lg p-3 mb-5 bg-white rounded" style="width: 45rem; height: 19rem; margin-top: -10rem;">
-                    <div class="weatherArea ">
-                        <p>weather area</p>
-                    </div>
-                </div>
-            </div>
-            <br><br><br><br><br><br><br><br>
-            <!-- Row 2, Column 2, Row b - 5-day Forecast Title -->
-            <div class="row">
-                <div class="col-8 float-right ">
-                    <div class="forecastTitle">
-                        <h2  class="lead margin-left: 20px;">5-Day Forecast:</h2>
-                    </div>
+        
+    </div>
 
-                </div>
-            </div>
-            <!-- Row 2, Column 2, Row c - 5-day Forecast Cards -->
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="row cardArea">
-                        <div class="col-sm-2.2">
-                            <div class="card forecast-01">
-                                <!-- <div class="card-body bg-info">forecast</div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <!-- Links to js libraries and external logic sheet -->
+    <script src="https://kit.fontawesome.com/1cc5977b2c.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./Assets/js/script.js"></script>
+    
 </body>
 
 </html>
