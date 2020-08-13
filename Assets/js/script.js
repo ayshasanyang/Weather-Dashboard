@@ -81,6 +81,7 @@ function getData() {
         method: "GET"
     // displays 5 separate columns from the forecast response
     }).then(function (response) {
+        $("h4").text("5-Day Forecast:");
         for (i = 0; i < 5; i++) {
             // creates the columns
             var newCard = $("<div>").attr("class", "col fiveDay bg-info text-white rounded-lg p-2");
