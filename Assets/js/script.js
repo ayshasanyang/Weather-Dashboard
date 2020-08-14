@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var searchHistory = [];
   function getItems() {
           var searchStorage = JSON.parse(localStorage.getItem("searchHistory"));
@@ -9,6 +10,11 @@ var searchHistory = [];
               if (i == 8) {
                   break;
                 }
+             $(".list-group-item").focus(function(){
+                    $(this).css("border", "1px solid #00c5d3");
+                });
+
+            
               cityListButton = $("<a>").attr({
                   class: "list-group-item list-group-item-action",
                   href: "#"
@@ -126,4 +132,5 @@ $("#searchCity").click(function() {
 $(".list-group-item").click(function() {
   city = $(this).text();
   getData();
+});
 });
